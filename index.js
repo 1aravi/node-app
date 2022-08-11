@@ -4,13 +4,17 @@ import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 import {moviesRouter} from "./routes/movies.js"
+import cors from "cors";
 
 dotenv.config();
 // console.log(process.env.MONGO_URL);
 
+
+
 const app = express()
 const PORT=process.env.PORT;
 
+app.use(cors());
 
 app.use(express.json());
 
